@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:10:40 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/04 14:02:19 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/04 19:46:38 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,28 @@ void	fill_instructions(t_stack *stacks)
 void	create_stack(int ac, char **av)
 {
 	int 	i;
-	t_stack	*stacks;
+	t_infos	*infos;
+	t_stack	*it;
 
-	stacks = (t_stack*)malloc(sizeof(t_stack));
-	if (!stacks)
+	infos = (t_infos*)malloc(sizeof(t_infos));
+	if (!infos)
 		return ;
-	stacks->stack_a = (int*)malloc(sizeof(int) * ac);
-	stacks->stack_b = (int*)malloc(sizeof(int) * ac);
-	stacks->instructions = (char**)malloc(sizeof(char *) * NB_INSTRU);
-	stacks->sorted = 0;
-	if (!(stacks->stack_a) || !(stacks->stack_b) || !(stacks->instructions))
+	infos->a = (t_stack*)malloc(sizeof(t_stack));
+	infos->b = (t_stack*)malloc(sizeof(t_stack));
+	infos->instructions = (char**)malloc(sizeof(char *) * NB_INSTRU);
+	infos->sorted = 0;
+	if (!(infos->a) || !(infos->b) || !(infos->instructions))
 		return ;
 	i = ac;
+	infos->size = ac;
 	while (--i > 0)
-		stacks->stack_a[i] = ft_atoi(av[i]);
-	fill_instructions(stacks);
-	wait_instructions(stacks);
+	{
+		infos->a->nb = ft_atoi(av[i]);
+		infos->a->place = i;
+		infos->a->next = (t_stack*)malloc(sizeof(t_stack));
+		if (!infos->a->next)
+			return ;i
+	}
+	fill_instructions(infos);
+	wait_instructions(infos);
 }

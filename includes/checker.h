@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:02:26 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/04 13:56:19 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/04 19:50:31 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,29 @@
 # include <stdlib.h>
 # define NB_INSTRU 11
 
-typedef struct		s_stack
+typedef struct		s_infos t_infos;
+
+typedef struct		s_elem
 {
-	int				*stack_a;
-	int				*stack_b;
+	int				nb;
+	unsigned int	place;
+	struct s_elem	*next;
+}					t_elem;
+
+typedef struct		s_infos
+{
+	t_elem			*a;
+	t_elem			*b;
 	int				sorted;
 	char			**instructions;
-	void			(*op)(t_stack *stacks);
-}					t_stack;
+	void			(*op)(t_elem *stacks);
+	unsigned int	size;
+	t_elem			*a;
+	t_elem			*b;
+	t_elem			*first;
+}					t_infos;
 
 void				create_stack(int ac, char **av);
-void				wait_instructions(t_stack *stacks);
+void				wait_instructions(t_elem *stacks);
 
 #endif
