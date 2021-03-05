@@ -6,22 +6,11 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 19:53:12 by antoine           #+#    #+#             */
-/*   Updated: 2021/03/05 08:58:07 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 10:19:35 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-void	swap_front_elem(t_elem **alst)
-{
-	t_elem	*tmp;
-
-	if (!((*alst)->next))
-		return ;
-	tmp = (*alst)->next;
-	(*alst)->next = (*alst)->next->next;
-	tmp->next = (*alst);
-}
 
 void	add_elem_front(t_elem **alst, t_elem *new)
 {

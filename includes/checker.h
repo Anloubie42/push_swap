@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:02:26 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 09:01:38 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 11:46:24 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # define NB_INSTRU 11
-
-typedef struct		s_infos t_infos;
 
 typedef struct		s_elem
 {
@@ -35,17 +33,59 @@ typedef struct		s_infos
 	t_elem			*b;
 	int				sorted;
 	char			**instructions;
-	void			(*op)(t_elem *stacks);
+	void			(*op[NB_INSTRU])(struct s_infos *infos);
 	unsigned int	size;
 	t_elem			*first_a;
 	t_elem			*first_b;
 }					t_infos;
 
+/*
+**	Initialization
+*/
 void				create_stack(int ac, char **av);
 void				wait_instructions(t_infos *infos);
+
+/*
+**	List functions
+*/
 void				add_elem_front(t_elem **alst, t_elem *new);
 void				add_elem_back(t_elem **alst, t_elem *new);
 t_elem				*new_elem(int nb, unsigned int place);
-void				swap_front_elem(t_elem **alst);
+
+/*
+**	Swap
+*/
+t_elem				*swap_front_elem(t_elem **alst);
+void				swap_a(t_infos *infos);
+void				swap_b(t_infos *infos);
+void				swap_both(t_infos *infos);
+
+/*
+**	Push
+*/
+t_elem				*push_elem(t_elem **alst1, t_elem **alst2);
+void				push_a(t_infos *infos);
+void				push_b(t_infos *infos);
+
+/*
+**	Rotate
+*/
+t_elem				*rotate_stack(t_elem **alst);
+void				rotate_a(t_infos *infos);
+void				rotate_b(t_infos *infos);
+void				rotate_both(t_infos *infos);
+
+/*
+**	Reverse rotate
+*/
+t_elem				*reverse_rotate_stack(t_elem **alst);
+void				reverse_ra(t_infos *infos);
+void				reverse_rb(t_infos *infos);
+void				reverse_rboth(t_infos *infos);
+
+/*
+**	Free
+*/
+void				free_exit(t_infos *infos);
 
 #endif

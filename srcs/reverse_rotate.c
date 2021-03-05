@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/05 10:45:59 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 11:00:46 by anloubie         ###   ########.fr       */
+/*   Created: 2021/03/05 11:03:23 by anloubie          #+#    #+#             */
+/*   Updated: 2021/03/05 11:07:52 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-t_elem		*rotate_stack(t_elem **alst)
+t_elem		*reverse_rotate_stack(t_elem **alst)
 {
 	t_elem	*tmp;
 	t_elem	*tmp2;
 
-	tmp = (*alst)->next;
-	tmp2 = (*alst);
-	(*alst)->next = NULL;
-	(*alst) = tmp;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = tmp2;
+	tmp = (*alst);
+	tmp2 = tmp;
+	while ((*alst)->next)
+		(*alst) = (*alst)->next;
+	(*alst)->next = tmp;
 	return (*alst);
 }
 
-void		rotate_a(t_infos *infos)
+void		reverse_ra(t_infos *infos)
 {
-	infos->first_a = rotate_stack(&infos->a);
+	infos->first_a = reverse_rotate_stack(&infos->a);
 }
 
-void		rotate_b(t_infos *infos)
+void		reverse_rb(t_infos *infos)
 {
-	infos->first_b = rotate_stack(&infos->b);
+	infos->first_b = reverse_rotate_stack(&infos->b);
 }
 
-void		rotate_both(t_infos *infos)
+void		reverse_rboth(t_infos *infos)
 {
-	rotate_a(infos);
-	rotate_b(infos);
+	reverse_ra(infos);
+	reverse_rb(infos);
 }

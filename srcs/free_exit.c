@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   free_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/05 10:45:59 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 11:00:46 by anloubie         ###   ########.fr       */
+/*   Created: 2021/03/05 11:30:56 by anloubie          #+#    #+#             */
+/*   Updated: 2021/03/05 11:50:30 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-t_elem		*rotate_stack(t_elem **alst)
+void		free_list(t_elem *list)
 {
 	t_elem	*tmp;
-	t_elem	*tmp2;
 
-	tmp = (*alst)->next;
-	tmp2 = (*alst);
-	(*alst)->next = NULL;
-	(*alst) = tmp;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = tmp2;
-	return (*alst);
+	while (list)
+	{
+		tmp = list;
+		list = list->next;
+		free(tmp);
+	}
 }
 
-void		rotate_a(t_infos *infos)
+void		free_exit(t_infos *infos)
 {
-	infos->first_a = rotate_stack(&infos->a);
-}
+	int		i;
 
-void		rotate_b(t_infos *infos)
-{
-	infos->first_b = rotate_stack(&infos->b);
-}
-
-void		rotate_both(t_infos *infos)
-{
-	rotate_a(infos);
-	rotate_b(infos);
+	i = 0;
+	while (i < NB_INSTRU)
+		free(infos->instructions[i++]);
+	free(infos->instructions);
+	free_list(infos->a);
+	free_list(infos->b);
+	free(infos);
+	exit(0);
 }

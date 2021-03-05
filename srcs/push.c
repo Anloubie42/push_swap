@@ -3,18 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:03:07 by antoine           #+#    #+#             */
-/*   Updated: 2021/03/04 19:36:50 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/05 10:46:40 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	pa(t_stack *stacks)
+t_elem	*push_elem(t_elem **alst1, t_elem **alst2)
 {
-	if (!stacks->stack_b[0])
-		return ;
-	
+	t_elem	*tmp;
+
+	tmp = (*alst1)->next;
+	(*alst1)->next = (*alst2);
+	(*alst2) = (*alst1);
+	(*alst1) = tmp;
+	return (*alst1);
+}
+
+void	push_a(t_infos *infos)
+{
+	infos->first_b = push_elem(&infos->b, &infos->a);
+	infos->first_a = infos->a;
+}
+
+void	push_b(t_infos *infos)
+{
+	infos->first_a = push_elem(&infos->a, &infos->b);
+	infos->first_b = infos->b;
 }

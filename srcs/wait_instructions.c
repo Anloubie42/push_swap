@@ -6,11 +6,45 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:19:03 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 09:08:16 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 12:06:20 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+void	print_list(t_elem *elem)
+{
+	while (elem)
+	{
+		printf("%d\n", elem->nb);
+		elem = elem->next;
+	}
+}
+
+int		check_sorted(t_infos *infos)
+{
+	t_elem	*tmp;
+	int		previous;
+
+	print_list(infos->a);
+	printf("######################\n");
+	print_list(infos->b);
+	if (infos->b)
+		return (0);
+	tmp = infos->first_a;
+	previous = infos->first_b->nb;
+	while (tmp)
+	{
+		if (tmp->next)
+			tmp = tmp->next;
+		else
+			break ;
+		if (tmp->nb < previous)
+			return (0);
+		previous = tmp->nb;
+	}
+	return (1);
+}
 
 int		check_instruction(char *instruction, t_infos *infos)
 {
@@ -20,7 +54,10 @@ int		check_instruction(char *instruction, t_infos *infos)
 	while (i < NB_INSTRU)
 	{
 		if (!ft_strncmp(instruction, infos->instructions[i], ft_strlen(infos->instructions[i])))
+		{
+			infos->op[i](infos);
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -29,28 +66,7 @@ int		check_instruction(char *instruction, t_infos *infos)
 void	wait_instructions(t_infos *infos)
 {
 	char	*instruction;
-	t_elem	*tmp;
 
-	tmp = infos->first_a;
-	while (1)
-	{
-		printf("%d\n", tmp->nb);
-		if (tmp->next)
-			tmp = tmp->next;
-		else
-			break ;
-	}
-	printf("###########################\n\n");
-	swap_front_elem(&infos->a);
-	tmp = infos->first_a;
-	while (1)
-	{
-		printf("%d\n", tmp->nb);
-		if (tmp->next)
-			tmp = tmp->next;
-		else
-			break ;
-	}
 	while ((get_next_line(STDIN_FILENO, &instruction)) > 0)
 	{
 		if (check_instruction(instruction, infos))
@@ -59,5 +75,15 @@ void	wait_instructions(t_infos *infos)
 			exit (1);
 		}
 		free(instruction);
+	}
+	if (check_sorted(infos))
+	{
+		write(1, "OK\n", 3);
+		free_exit(infos);
+	}
+	else
+	{
+		write(1, "KO\n", 3);
+		free_exit(infos);
 	}
 }

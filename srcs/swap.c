@@ -6,29 +6,39 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:48:56 by antoine           #+#    #+#             */
-/*   Updated: 2021/03/05 08:46:13 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 10:21:19 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	sa(t_infos *infos)
+t_elem		*swap_front_elem(t_elem **alst)
 {
+	t_elem	*tmp;
+
+	if (!alst || !(*alst))
+		return (NULL);
+	if (!((*alst)->next))
+		return (*alst);
+	tmp = (*alst)->next;
+	(*alst)->next = (*alst)->next->next;
+	tmp->next = (*alst);
+	(*alst) = tmp;
+	return (*alst);
 }
 
-void	sb(t_stack *stacks)
+void		swap_a(t_infos *infos)
 {
-	int	tmp;
-
-	if (stacks->size <= 1 || !stacks->stack_b[0] || !stacks->stack_b[1])
-		return ;
-	tmp = stacks->stack_b[0];
-	stacks->stack_b[0] = stacks->stack_b[1];
-	stacks->stack_b[1] = tmp;
+	infos->first_a = swap_front_elem(&infos->a);
 }
 
-void	sr(t_stack *stacks)
+void		swap_b(t_infos *infos)
 {
-	sa(stacks);
-	sb(stacks);
+	infos->first_b = swap_front_elem(&infos->b);
+}
+
+void		swap_both(t_infos *infos)
+{
+	swap_a(infos);
+	swap_b(infos);
 }
