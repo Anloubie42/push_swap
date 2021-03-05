@@ -3,16 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   lst.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 19:53:12 by antoine           #+#    #+#             */
-/*   Updated: 2021/03/04 19:56:52 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/05 08:58:07 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	add_elem(t_elem **alst, t_elem *new)
+void	swap_front_elem(t_elem **alst)
+{
+	t_elem	*tmp;
+
+	if (!((*alst)->next))
+		return ;
+	tmp = (*alst)->next;
+	(*alst)->next = (*alst)->next->next;
+	tmp->next = (*alst);
+}
+
+void	add_elem_front(t_elem **alst, t_elem *new)
+{
+	t_elem	*temp;
+
+	if (!alst)
+		return ;
+	temp = *alst;
+	*alst = new;
+	new->next = temp;
+}
+
+void	add_elem_back(t_elem **alst, t_elem *new)
 {
 	t_elem	*temp;
 
@@ -24,7 +46,7 @@ void	add_elem(t_elem **alst, t_elem *new)
 		return ;
 	}
 	temp = *alst;
-	while (temp && temp->next)
+	while (temp->next)
 		temp = temp->next;
 	temp->next = new;
 }

@@ -6,7 +6,7 @@
 #    By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 13:12:09 by anloubie          #+#    #+#              #
-#    Updated: 2021/03/04 13:20:12 by anloubie         ###   ########.fr        #
+#    Updated: 2021/03/05 08:38:34 by anloubie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ NAME	=		checker
 
 SRCS_NAME	=	main.c					\
 				create_stack.c			\
-				wait_instructions.c
+				wait_instructions.c		\
+				lst.c
 
 INCS_NAME	=	checker.h
 

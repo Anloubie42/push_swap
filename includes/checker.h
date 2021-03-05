@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:02:26 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/04 19:50:31 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/05 09:01:38 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,15 @@ typedef struct		s_infos
 	char			**instructions;
 	void			(*op)(t_elem *stacks);
 	unsigned int	size;
-	t_elem			*a;
-	t_elem			*b;
-	t_elem			*first;
+	t_elem			*first_a;
+	t_elem			*first_b;
 }					t_infos;
 
 void				create_stack(int ac, char **av);
-void				wait_instructions(t_elem *stacks);
+void				wait_instructions(t_infos *infos);
+void				add_elem_front(t_elem **alst, t_elem *new);
+void				add_elem_back(t_elem **alst, t_elem *new);
+t_elem				*new_elem(int nb, unsigned int place);
+void				swap_front_elem(t_elem **alst);
 
 #endif
