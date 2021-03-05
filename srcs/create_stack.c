@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:10:40 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 11:19:30 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 14:48:59 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,10 @@ void	fill_instructions(t_infos *infos)
 	fill_operations(infos);
 }
 
-void	create_stack(int ac, char **av)
+void	create_stack(int ac, char **av, t_infos *infos)
 {
 	unsigned int	i;
-	t_infos			*infos;
 
-	infos = (t_infos*)malloc(sizeof(t_infos));
-	if (!infos)
-		return ;
 	infos->a = new_elem(ft_atoi(av[1]), 0);
 	infos->b = NULL;
 	infos->instructions = (char**)malloc(sizeof(char *) * NB_INSTRU);
@@ -66,5 +62,4 @@ void	create_stack(int ac, char **av)
 	}
 	infos->first_a = infos->a;
 	fill_instructions(infos);
-	wait_instructions(infos);
 }

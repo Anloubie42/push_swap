@@ -15,6 +15,7 @@ LIB_SRCS_NAME	=	ft_toupper.c			\
 					ft_memset.c				\
 					ft_strchr.c				\
 					ft_strncmp.c			\
+					ft_strcmp.c				\
 					ft_strnstr.c			\
 					ft_strrchr.c			\
 					ft_memcpy.c				\

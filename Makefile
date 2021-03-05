@@ -6,23 +6,27 @@
 #    By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 13:12:09 by anloubie          #+#    #+#              #
-#    Updated: 2021/03/05 11:49:59 by anloubie         ###   ########.fr        #
+#    Updated: 2021/03/05 15:37:36 by anloubie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=		checker
+# NAME	=		checker
+NAME	=		push_swap
 
 # Sources
 
-SRCS_NAME	=	main.c					\
-				create_stack.c			\
+SRCS_NAME	=	create_stack.c			\
 				wait_instructions.c		\
 				lst.c					\
 				push.c					\
 				swap.c					\
 				rotate.c				\
 				reverse_rotate.c		\
-				free_exit.c
+				free_exit.c				\
+				error_check.c			\
+				check_list.c			\
+				main_swap.c
+				# main_checker.c
 
 INCS_NAME	=	checker.h
 
@@ -34,6 +38,8 @@ SRCS_DIR	=	./srcs/
 OBJS_DIR	=	./objs/
 INCS_DIR	=	./includes/
 LIB_DIR		=	./libft/
+CHECK_MAIN	=	main_checker.c
+SWAP_MAIN	=	main_swap.c
 
 # Files
 

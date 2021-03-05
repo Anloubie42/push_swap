@@ -1,35 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 12:56:49 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/04 13:26:34 by anloubie         ###   ########.fr       */
+/*   Created: 2021/03/05 14:19:52 by anloubie          #+#    #+#             */
+/*   Updated: 2021/03/05 14:22:30 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
+int		is_all_digits(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < ft_strlen(str))
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int		input_error(int ac, char **av)
 {
 	int	i;
+	int	j;
 
-	(void)av;
 	i = 1;
 	if (ac == 1)
 		return (1);
-	return (0);
-}
-
-int	main(int ac, char **av)
-{
-	if (input_error(ac, av))
+	while (i < ac)
 	{
-		write(1, "Error\n", 6);
-		return (1);
+		if (is_all_digits(av[i]) == 0)
+			return (1);
+		j = 1;
+		while (j < i)
+		{
+			if (ft_atoi(av[j]) == ft_atoi(av[i]))
+				return (1);
+			j++;
+		}
+		i++;
 	}
-	create_stack(ac, av);
 	return (0);
 }

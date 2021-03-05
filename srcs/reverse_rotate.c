@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 11:03:23 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 11:07:52 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 13:48:30 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ t_elem		*reverse_rotate_stack(t_elem **alst)
 	tmp2 = tmp;
 	while ((*alst)->next)
 		(*alst) = (*alst)->next;
+	while (tmp2->next->next)
+		tmp2 = tmp2->next;
+	tmp2->next = NULL;
 	(*alst)->next = tmp;
 	return (*alst);
 }

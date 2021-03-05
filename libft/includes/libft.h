@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 10:44:29 by anloubie          #+#    #+#             */
-/*   Updated: 2020/01/10 14:46:34 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 13:44:38 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ size_t				ft_strlcpy(char *restrict dst, const char *restrict src,
 					size_t size);
 size_t				ft_strlen(const char *str);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strcmp(const char *s1, const char *s2);
 char				*ft_strnstr(const char *haystack, const char *needle,
 					size_t len);
 char				*ft_strrchr(const char *s, int c);

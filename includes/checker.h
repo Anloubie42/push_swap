@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:02:26 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 11:46:24 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 14:53:32 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct		s_infos
 /*
 **	Initialization
 */
-void				create_stack(int ac, char **av);
+void				create_stack(int ac, char **av, t_infos *infos);
 void				wait_instructions(t_infos *infos);
 
 /*
@@ -87,5 +87,15 @@ void				reverse_rboth(t_infos *infos);
 **	Free
 */
 void				free_exit(t_infos *infos);
+
+/*
+**	Error check
+*/
+int					input_error(int ac, char **av);
+
+/*
+**	Sort check
+*/
+int					check_sorted(t_infos *infos);
 
 #endif

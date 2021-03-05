@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:19:03 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 12:06:20 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 13:54:51 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	print_list(t_elem *elem)
 {
 	while (elem)
 	{
-		printf("%d\n", elem->nb);
+		printf("%d ", elem->nb);
 		elem = elem->next;
 	}
+	printf("\n");
 }
 
 int		check_sorted(t_infos *infos)
@@ -26,13 +27,10 @@ int		check_sorted(t_infos *infos)
 	t_elem	*tmp;
 	int		previous;
 
-	print_list(infos->a);
-	printf("######################\n");
-	print_list(infos->b);
 	if (infos->b)
 		return (0);
 	tmp = infos->first_a;
-	previous = infos->first_b->nb;
+	previous = infos->first_a->nb;
 	while (tmp)
 	{
 		if (tmp->next)
@@ -53,7 +51,7 @@ int		check_instruction(char *instruction, t_infos *infos)
 	i = 0;
 	while (i < NB_INSTRU)
 	{
-		if (!ft_strncmp(instruction, infos->instructions[i], ft_strlen(infos->instructions[i])))
+		if (!ft_strcmp(instruction, infos->instructions[i]))
 		{
 			infos->op[i](infos);
 			return (0);
@@ -71,7 +69,7 @@ void	wait_instructions(t_infos *infos)
 	{
 		if (check_instruction(instruction, infos))
 		{
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 			exit (1);
 		}
 		free(instruction);
