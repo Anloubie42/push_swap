@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wait_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:19:03 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 13:54:51 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/05 19:42:22 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	wait_instructions(t_infos *infos)
 			write(2, "Error\n", 6);
 			exit (1);
 		}
+		print_list(infos->a);
+		print_list(infos->b);
 		free(instruction);
 	}
 	if (check_sorted(infos))
