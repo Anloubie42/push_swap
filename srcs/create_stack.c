@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:10:40 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 14:48:59 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/09 08:48:47 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,8 @@ void	create_stack(int ac, char **av, t_infos *infos)
 		i++;
 	}
 	infos->first_a = infos->a;
+	infos->array = (int*)malloc(sizeof(int) * infos->size);
+	if (!infos->array)
+		return ;
 	fill_instructions(infos);
 }

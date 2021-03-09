@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:43:33 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/07 14:18:22 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/09 09:23:15 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int			get_element_by_id(t_elem *elem, unsigned int index);
 */
 void		begin_sort(t_infos *infos);
 void		sort_three(t_infos *infos);
+void		sort_array(t_infos *infos);
+void		fill_array(t_infos *infos);
 
 /*
 **	Checks

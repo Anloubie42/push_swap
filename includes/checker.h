@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:02:26 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 14:53:32 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/09 08:48:17 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct		s_infos
 	unsigned int	size;
 	t_elem			*first_a;
 	t_elem			*first_b;
+	int				*array;
 }					t_infos;
 
 /*

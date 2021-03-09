@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
+#    By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 13:12:09 by anloubie          #+#    #+#              #
-#    Updated: 2021/03/05 19:50:02 by antoine          ###   ########.fr        #
+#    Updated: 2021/03/09 08:35:33 by anloubie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,8 +37,8 @@ SRCS_NAME	=	create_stack.c			\
 				error_check.c			\
 				check_list.c			\
 				sort.c					\
+				sort_input.c			\
 				main_swap.c
-				# main_checker.c
 
 INCS_NAME	=	checker.h
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:43:12 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 20:15:25 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/09 09:23:07 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int ac, char **av)
 	create_stack(ac, av, infos);
 	if (check_sorted(infos))
 		free_exit(infos);
+	sort_array(infos);
 	begin_sort(infos);
 	return (0);
 }
