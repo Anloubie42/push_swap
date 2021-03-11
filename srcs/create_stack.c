@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:10:40 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/09 08:48:47 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/10 11:35:58 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,12 @@ void	create_stack(int ac, char **av, t_infos *infos)
 		return ;
 	i = 2;
 	infos->size = ac - 1;
+	infos->size_a = 1;
+	infos->size_b = 0;
 	while (i <= infos->size)
 	{
 		add_elem_back(&infos->a, new_elem(ft_atoi(av[i]), i - 1));
+		infos->size_a++;
 		i++;
 	}
 	infos->first_a = infos->a;

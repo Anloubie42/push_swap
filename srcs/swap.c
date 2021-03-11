@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 14:48:56 by antoine           #+#    #+#             */
-/*   Updated: 2021/03/06 15:01:47 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/09 14:01:40 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ t_elem		*swap_front_elem(t_elem **alst)
 void		swap_a(t_infos *infos)
 {
 	infos->first_a = swap_front_elem(&infos->a);
+	write(1, "sa\n", 3);
 }
 
 void		swap_b(t_infos *infos)
 {
 	infos->first_b = swap_front_elem(&infos->b);
+	write(1, "sb\n", 3);
 }
 
 void		swap_both(t_infos *infos)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:59:38 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/09 08:49:08 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/11 11:27:59 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sort_three(t_infos *infos)
 {
 	t_elem	*tmp;
 
-	while (!check_sorted(infos))
+	while (!check_sorted_list(infos->first_a))
 	{
 		tmp = infos->first_a;
 		if (tmp->nb > tmp->next->nb)
@@ -45,8 +45,37 @@ void	sort_three(t_infos *infos)
 	}
 }
 
+void	sort_five(t_elem *first)
+{
+	t_elem	*tmp;
+
+	tmp = first;
+}
+
+void	sort_list(t_infos *infos)
+{
+	size_t	count;
+
+	count = 0;
+	while (count < infos->size_a)
+	{
+		if (infos->first_a->nb >= infos->median)
+			push_b(infos);
+		else
+			rotate_a(infos);
+		count++;
+	}
+	print_list(infos->first_a);
+	print_list(infos->first_b);
+}
+
 void	begin_sort(t_infos *infos)
 {
+	fill_array(infos);
+	infos->array = sort_array(infos->array, infos->size);
+	infos->median = infos->array[infos->size / 2];
 	if (infos->size <= 3)
 		sort_three(infos);
+	else
+		sort_list(infos);
 }

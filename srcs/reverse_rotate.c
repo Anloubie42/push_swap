@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 11:03:23 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 13:48:30 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/09 14:02:00 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,13 @@ t_elem		*reverse_rotate_stack(t_elem **alst)
 void		reverse_ra(t_infos *infos)
 {
 	infos->first_a = reverse_rotate_stack(&infos->a);
+	write(1, "rra\n", 4);
 }
 
 void		reverse_rb(t_infos *infos)
 {
 	infos->first_b = reverse_rotate_stack(&infos->b);
+	write(1, "rrb\n", 4);
 }
 
 void		reverse_rboth(t_infos *infos)

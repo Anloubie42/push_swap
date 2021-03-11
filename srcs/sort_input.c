@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_input.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 08:35:39 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/09 11:41:17 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/10 13:25:35 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	fill_array(t_infos *infos)
 	}
 }
 
-void	sort_array(t_infos *infos)
+int		*sort_array(int *array, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -38,30 +38,65 @@ void	sort_array(t_infos *infos)
 	int				tmp2;
 
 	i = 1;
-	fill_array(infos);
-	while (i < infos->size)
+	while (i < size)
 	{
 		j = i - 1;
-		while (infos->array[i] > infos->array[j])
+		while (array[i] > array[j])
 		{
 			i++;
 			j++;
 		}
-		if (infos->array[j] > infos->array[i])
+		if (i < size && array[j] > array[i])
 		{
-			while (j > 0 && infos->array[i] < infos->array[j - 1])
+			while (j > 0 && array[i] < array[j - 1])
 				j--;
 			tmp = i;
-			tmp2 = infos->array[i];
+			tmp2 = array[i];
 			while (i > j)
 			{
-				infos->array[i] = infos->array[i - 1];
+				array[i] = array[i - 1];
 				i--;
 			}
-			infos->array[j] = tmp2;
+			array[j] = tmp2;
+			i = tmp;
 		}
-		i = tmp + 1;
+		i++;
 	}
-	for (unsigned int k = 0; k < infos->size; k++)
-		printf("%d\n", infos->array[k]);
+	return (array);
 }
+
+// void	sort_array(t_infos *infos)
+// {
+// 	unsigned int	i;
+// 	unsigned int	j;
+// 	int				tmp;
+// 	int				tmp2;
+
+// 	i = 1;
+// 	fill_array(infos);
+// 	while (i < infos->size)
+// 	{
+// 		j = i - 1;
+// 		while (infos->array[i] > infos->array[j])
+// 		{
+// 			i++;
+// 			j++;
+// 		}
+// 		if (infos->array[j] > infos->array[i])
+// 		{
+// 			while (j > 0 && infos->array[i] < infos->array[j - 1])
+// 				j--;
+// 			tmp = i;
+// 			tmp2 = infos->array[i];
+// 			while (i > j)
+// 			{
+// 				infos->array[i] = infos->array[i - 1];
+// 				i--;
+// 			}
+// 			infos->array[j] = tmp2;
+// 		}
+// 		i = tmp + 1;
+// 	}
+// 	for (unsigned int k = 0; k < infos->size; k++)
+// 		printf("%d\n", infos->array[k]);
+// }

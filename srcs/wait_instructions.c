@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:19:03 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 19:42:22 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/11 11:27:24 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,13 @@ void	print_list(t_elem *elem)
 	printf("\n");
 }
 
-int		check_sorted(t_infos *infos)
+int		check_sorted_list(t_elem *first)
 {
 	t_elem	*tmp;
 	int		previous;
 
-	if (infos->b)
-		return (0);
-	tmp = infos->first_a;
-	previous = infos->first_a->nb;
+	tmp = first;
+	previous = first->nb;
 	while (tmp)
 	{
 		if (tmp->next)
@@ -41,6 +39,16 @@ int		check_sorted(t_infos *infos)
 			return (0);
 		previous = tmp->nb;
 	}
+	return (1);
+}
+
+int		check_sorted(t_infos *infos)
+{
+
+	if (infos->b)
+		return (0);
+	if (!check_sorted_list(infos->first_a))
+		return (0);
 	return (1);
 }
 

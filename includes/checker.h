@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:02:26 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/09 08:48:17 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/10 11:28:17 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,17 @@ typedef struct		s_elem
 typedef struct		s_infos
 {
 	t_elem			*a;
+	t_elem			*first_a;
 	t_elem			*b;
+	t_elem			*first_b;
+	unsigned int	size;
+	unsigned int	size_a;
+	unsigned int	size_b;
 	int				sorted;
 	char			**instructions;
 	void			(*op[NB_INSTRU])(struct s_infos *infos);
-	unsigned int	size;
-	t_elem			*first_a;
-	t_elem			*first_b;
 	int				*array;
+	int				median;
 }					t_infos;
 
 /*
