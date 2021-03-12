@@ -6,7 +6,7 @@
 #    By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 13:12:09 by anloubie          #+#    #+#              #
-#    Updated: 2021/03/09 08:35:33 by anloubie         ###   ########.fr        #
+#    Updated: 2021/03/12 15:25:11 by anloubie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,8 @@ SRCS_NAME	=	create_stack.c			\
 				check_list.c			\
 				sort.c					\
 				sort_input.c			\
+				median.c				\
+				lst_bloc.c				\
 				main_swap.c
 
 INCS_NAME	=	checker.h
@@ -87,6 +89,11 @@ $(OBJS_DIR)%.o: $(SRCS_DIR)%.c $(INCS)
 
 librm:
 	@make -sC $(LIB_DIR) fclean
+
+debug: extend_flags re
+
+extend_flags:
+	$(eval CFLAGS += -g)
 
 clean:
 	@rm -rf $(OBJS_DIR)

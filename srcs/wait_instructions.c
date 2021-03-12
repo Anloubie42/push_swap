@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wait_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:19:03 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/11 11:27:24 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/12 15:36:11 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,35 @@
 
 void	print_list(t_elem *elem)
 {
-	while (elem)
+	t_elem *tmp;
+
+	tmp = elem;
+	while (tmp)
 	{
-		printf("%d ", elem->nb);
-		elem = elem->next;
+		printf("%d ", tmp->nb);
+		tmp = tmp->next;
 	}
 	printf("\n");
+}
+
+int		check_sorted_list_reverse(t_elem *first)
+{
+	t_elem	*tmp;
+	int		previous;
+
+	tmp = first;
+	previous = first->nb;
+	while (tmp)
+	{
+		if (tmp->next)
+			tmp = tmp->next;
+		else
+			break ;
+		if (tmp->nb > previous)
+			return (0);
+		previous = tmp->nb;
+	}
+	return (1);
 }
 
 int		check_sorted_list(t_elem *first)
