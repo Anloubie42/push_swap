@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:45:59 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/09 14:04:41 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/14 11:07:43 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,11 @@ t_elem		*rotate_stack(t_elem **alst)
 void		rotate_a(t_infos *infos)
 {
 	infos->first_a = rotate_stack(&infos->a);
-	write(1, "ra\n", 3);
 }
 
 void		rotate_b(t_infos *infos)
 {
 	infos->first_b = rotate_stack(&infos->b);
-	write(1, "rb\n", 3);
 }
 
 void		rotate_both(t_infos *infos)

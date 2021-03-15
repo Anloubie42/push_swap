@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wait_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:19:03 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/12 15:36:11 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/14 18:58:07 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int		check_sorted_list_reverse(t_elem *first)
 	t_elem	*tmp;
 	int		previous;
 
+	if (!first)
+		return (0);
 	tmp = first;
 	previous = first->nb;
 	while (tmp)
@@ -50,6 +52,8 @@ int		check_sorted_list(t_elem *first)
 	t_elem	*tmp;
 	int		previous;
 
+	if (!first)
+		return (0);
 	tmp = first;
 	previous = first->nb;
 	while (tmp)
