@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:03:07 by antoine           #+#    #+#             */
-/*   Updated: 2021/03/14 11:20:41 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/16 10:54:35 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ void	push_b(t_infos *infos)
 	infos->size_a -= 1;
 	infos->size_b += 1;
 }
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:59:38 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/15 17:50:54 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/16 11:04:14 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ void	sort_list(t_infos *infos)
 	}
 	while (infos->first_b)
 		print_pa(infos);
-	print_list(infos->a);
-	print_list(infos->b);
 }
 
 void	begin_sort(t_infos *infos)
@@ -65,6 +63,8 @@ void	begin_sort(t_infos *infos)
 	infos->median = infos->array[infos->size / 2];
 	if (infos->size <= 3)
 		sort_three_a(infos);
+	else if (infos->size <= 5)
+		sort_five(infos);
 	else
 		sort_list(infos);
 }

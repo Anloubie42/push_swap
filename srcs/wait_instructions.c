@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wait_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:19:03 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/14 18:58:07 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/16 11:11:54 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ int		check_sorted_list(t_elem *first)
 
 int		check_sorted(t_infos *infos)
 {
-
 	if (infos->b)
 		return (0);
 	if (!check_sorted_list(infos->first_a))
@@ -105,7 +104,7 @@ void	wait_instructions(t_infos *infos)
 		if (check_instruction(instruction, infos))
 		{
 			write(2, "Error\n", 6);
-			exit (1);
+			exit(1);
 		}
 		print_list(infos->a);
 		print_list(infos->b);

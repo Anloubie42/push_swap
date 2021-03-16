@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:43:33 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/15 17:51:47 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/16 08:52:58 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,11 @@ void				free_front_bloc(t_bloc **alst);
 void				begin_sort(t_infos *infos);
 void				sort_three_a(t_infos *infos);
 void				sort_three_a_reverse(t_infos *infos);
+void				sort_five(t_infos *infos);
+void				sort_five_reverse(t_infos *infos);
 int					*sort_array(int *array, unsigned int size);
 void				fill_array(t_infos *infos);
-void				push_or_rotate_first(t_infos *infos, t_elem *first);
+void				push_or_rotate_first(t_infos *infos, int median);
 
 /*
 **	Checks

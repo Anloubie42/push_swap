@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 17:50:32 by antoine           #+#    #+#             */
-/*   Updated: 2021/03/15 17:50:58 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/16 11:03:24 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	sort_three_a_reverse(t_infos *infos)
 			else
 				print_sa(infos);
 		}
-		else if(infos->size_a > 2)
+		else if (infos->size_a > 2)
 		{
 			tmp = tmp->next;
 			if (tmp->nb < tmp->next->nb)
@@ -51,7 +51,7 @@ void	sort_three_a(t_infos *infos)
 			else
 				print_sa(infos);
 		}
-		else if(infos->size_a > 2)
+		else if (infos->size_a > 2)
 		{
 			tmp = tmp->next;
 			if (tmp->nb > tmp->next->nb)
