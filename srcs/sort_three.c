@@ -6,11 +6,36 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 17:50:32 by antoine           #+#    #+#             */
-/*   Updated: 2021/03/16 11:03:24 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/18 12:27:12 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	sort_three(t_infos *infos)
+{
+	if (!infos->first_a || check_sorted_list(infos->a))
+		return ;
+	if (infos->first_a->nb > infos->first_a->next->nb)
+	{
+		print_sa(infos);
+		if (check_sorted_list(infos->a))
+			return ;
+	}
+	if (infos->first_a->nb > infos->first_a->next->next->nb)
+	{
+		print_ra(infos);
+		print_sa(infos);
+		print_rra(infos);
+		print_sa(infos);
+	}
+	else if (infos->first_a->nb < infos->first_a->next->next->nb)
+	{
+		print_ra(infos);
+		print_sa(infos);
+		print_rra(infos);
+	}
+}
 
 void	sort_three_a_reverse(t_infos *infos)
 {

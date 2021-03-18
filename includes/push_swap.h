@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:43:33 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/16 08:52:58 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/18 15:25:20 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,15 @@ void				print_list(t_elem *elem);
 */
 t_elem				*find_last_elem(t_elem *first);
 int					get_element_by_id(t_elem *elem, unsigned int index);
-void				add_bloc_front(t_bloc **alst, t_bloc *new);
+
+/*
+**	Blocs
+*/
 t_bloc				*new_bloc(void);
+void				add_bloc_front(t_bloc **alst, t_bloc *new);
 void				free_front_bloc(t_bloc **alst);
+t_bloc				*fill_bloc(t_infos *infos);
+size_t				get_size(t_bloc *first);
 
 /*
 **	Sort
@@ -45,6 +51,7 @@ void				sort_five_reverse(t_infos *infos);
 int					*sort_array(int *array, unsigned int size);
 void				fill_array(t_infos *infos);
 void				push_or_rotate_first(t_infos *infos, int median);
+void				sort_three(t_infos *infos);
 
 /*
 **	Checks

@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 08:35:39 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/16 11:00:05 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/18 10:12:29 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,17 @@ int		*sort_array(int *array, unsigned int size)
 	i = 0;
 	while (++i < size)
 	{
-		j = i - 1;
-		while (array[i++] > array[j])
-			j++;
+		j = i - 2;
+		while (array[i] > array[++j])
+			i++;
 		if (i < size && array[j] > array[i])
 		{
 			while (j > 0 && array[i] < array[j - 1])
 				j--;
 			tmp = i;
-			tmp2 = array[i];
+			tmp2 = array[i++];
 			while (--i > j)
-				array[i + 1] = array[i];
+				array[i] = array[i - 1];
 			array[j] = tmp2;
 			i = tmp;
 		}
