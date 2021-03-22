@@ -6,7 +6,7 @@
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:59:38 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/18 15:26:48 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/22 11:35:03 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,36 +31,44 @@ void	sort_list(t_infos *infos)
 	t_bloc			*bloc_a;
 
 	b = NULL;
-	bloc_a = NULL;
+	bloc_a = fill_bloc(infos);
 	a = 3;
 	while (!check_sorted(infos))
 	{
 		while (infos->size_a > a)
 		{
 			count = 0;
-			size = infos->size_a;
-			median = get_median_list(infos->first_a, infos->size_a);
+			size = (bloc_a->next) ? bloc_a->size : infos->size_a;
+			median = get_median_list(infos->first_a, bloc_a->size);
 			add_bloc_front(&b, new_bloc());
-			while (infos->size_a > a && count < size)
+			while (count < size)
 			{
 				if (infos->first_a->nb < median)
 				{
 					print_pb(infos);
 					b->size++;
 				}
-				else
+				else if (b->size < infos->size_a)
 					print_ra(infos);
 				count++;
 			}
+			while (bloc_a->next && b && count > b->size)
+			{
+				print_rra(infos);
+				count--;
+			}
 		}
 		sort_three(infos);
-		add_bloc_front(&bloc_a, new_bloc());
-		bloc_a->size = infos->size_a - get_size(bloc_a);
-		count = -1;
 		a = infos->size_a + 3;
-		while (b && ++count < b->size)
-			print_pa(infos);
-		free_front_bloc(&b);
+		if (b)
+		{
+			add_bloc_front(&bloc_a, new_bloc());
+				bloc_a->size = b->size;
+			count = -1;
+			while (++count < b->size)
+				print_pa(infos);
+			free_front_bloc(&b);
+		}
 	}
 }
 
