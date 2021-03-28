@@ -76,5 +76,6 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo "\033[32;01m[Libft fclean OK]\033[00m"
 
 re: fclean all

@@ -6,7 +6,7 @@
 #    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 13:12:09 by anloubie          #+#    #+#              #
-#    Updated: 2021/03/29 01:35:38 by antoine          ###   ########.fr        #
+#    Updated: 2021/03/29 01:53:25 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,8 +107,10 @@ clean:
 	@make -C $(LIB_DIR) clean
 
 fclean: librm clean
-	@rm -f $(NAME) $(NAME_2)
+	@rm -f $(NAME)
 	@echo "\033[32;01m[$(NAME) fclean OK]\033[00m"
+	@rm -f $(NAME_2)
+	@echo "\033[32;01m[$(NAME_2) fclean OK]\033[00m"
 
 re: fclean all
 
