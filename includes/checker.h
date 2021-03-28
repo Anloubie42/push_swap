@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:02:26 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/12 14:12:05 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/27 12:57:04 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ typedef struct		s_infos
 	int				sorted;
 	char			**instructions;
 	void			(*op[NB_INSTRU])(struct s_infos *infos);
-	int				*array;
-	int				median;
 }					t_infos;
 
 /*
@@ -90,7 +88,7 @@ void				reverse_rboth(t_infos *infos);
 /*
 **	Free
 */
-void				free_exit(t_infos *infos);
+void				free_exit(t_infos *infos, int ex);
 
 /*
 **	Error check

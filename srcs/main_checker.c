@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 12:56:49 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 14:47:19 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:04:46 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	main(int ac, char **av)
 	}
 	create_stack(ac, av, infos);
 	wait_instructions(infos);
+	free_exit(infos, 0);
 	return (0);
 }

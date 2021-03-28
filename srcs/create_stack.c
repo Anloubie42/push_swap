@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:10:40 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/10 11:35:58 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/27 12:57:15 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ void	fill_operations(t_infos *infos)
 
 void	fill_instructions(t_infos *infos)
 {
+	int	i;
+
+	i = -1;
 	infos->instructions[0] = ft_strdup("sa");
 	infos->instructions[1] = ft_strdup("sb");
 	infos->instructions[2] = ft_strdup("ss");
@@ -40,6 +43,9 @@ void	fill_instructions(t_infos *infos)
 	infos->instructions[8] = ft_strdup("rra");
 	infos->instructions[9] = ft_strdup("rrb");
 	infos->instructions[10] = ft_strdup("rrr");
+	while (++i < NB_INSTRU)
+		if (!infos->instructions[i])
+			free_exit(infos, 1);
 	fill_operations(infos);
 }
 
@@ -52,7 +58,7 @@ void	create_stack(int ac, char **av, t_infos *infos)
 	infos->instructions = (char**)malloc(sizeof(char *) * NB_INSTRU);
 	infos->sorted = 0;
 	if (!(infos->a) || !(infos->instructions))
-		return ;
+		free_exit(infos, 1);
 	i = 2;
 	infos->size = ac - 1;
 	infos->size_a = 1;
@@ -64,8 +70,5 @@ void	create_stack(int ac, char **av, t_infos *infos)
 		i++;
 	}
 	infos->first_a = infos->a;
-	infos->array = (int*)malloc(sizeof(int) * infos->size);
-	if (!infos->array)
-		return ;
 	fill_instructions(infos);
 }

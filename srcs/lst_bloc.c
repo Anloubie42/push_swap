@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_bloc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 13:26:15 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/18 15:23:10 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/27 12:42:15 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	free_front_bloc(t_bloc **bloc)
 {
-	t_bloc *tmp;
+	t_bloc	*tmp;
 
 	if (*bloc)
 	{
@@ -25,6 +25,12 @@ void	free_front_bloc(t_bloc **bloc)
 			(*bloc) = NULL;
 		free(tmp);
 	}
+}
+
+void	free_blocs(t_bloc *bloc)
+{
+	while (bloc)
+		free_front_bloc(&bloc);
 }
 
 void	add_bloc_front(t_bloc **alst, t_bloc *new)

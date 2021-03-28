@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+         #
+#    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 13:12:09 by anloubie          #+#    #+#              #
-#    Updated: 2021/03/22 08:57:38 by anloubie         ###   ########.fr        #
+#    Updated: 2021/03/25 23:16:04 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRCS_NAME	=	create_stack.c			\
 				sort_five.c				\
 				sort_three.c			\
 				bloc.c					\
+				push_or_rotate.c		\
 				main_swap.c
 
 INCS_NAME	=	checker.h
@@ -107,7 +108,7 @@ clean:
 	@make -C $(LIB_DIR) clean
 
 fclean: librm clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(NAME_2)
 	@echo "\033[32;01m[$(NAME) fclean OK]\033[00m"
 
 re: fclean all

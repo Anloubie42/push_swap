@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:43:33 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/18 15:25:20 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/27 12:47:34 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,18 @@ t_bloc				*new_bloc(void);
 void				add_bloc_front(t_bloc **alst, t_bloc *new);
 void				free_front_bloc(t_bloc **alst);
 t_bloc				*fill_bloc(t_infos *infos);
-size_t				get_size(t_bloc *first);
+size_t				get_bloc_size(t_bloc *first);
 
 /*
 **	Sort
 */
 void				begin_sort(t_infos *infos);
 void				sort_three_a(t_infos *infos);
-void				sort_three_a_reverse(t_infos *infos);
 void				sort_five(t_infos *infos);
-void				sort_five_reverse(t_infos *infos);
 int					*sort_array(int *array, unsigned int size);
-void				fill_array(t_infos *infos);
-void				push_or_rotate_first(t_infos *infos, int median);
 void				sort_three(t_infos *infos);
+void				split_stack_a(t_infos *infos, t_bloc **bloc_a, t_bloc **b);
+void				split_stack_b(t_infos *infos, t_bloc **bloc_a, t_bloc **b);
 
 /*
 **	Checks
@@ -82,5 +80,10 @@ void				print_rotate_both(t_infos *infos);
 void				print_rra(t_infos *infos);
 void				print_rrb(t_infos *infos);
 void				print_rerverse_rboth(t_infos *infos);
+
+/*
+**	Free
+*/
+void				free_blocs(t_bloc *bloc);
 
 #endif

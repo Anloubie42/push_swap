@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bloc.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 15:22:56 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/22 09:15:44 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/25 23:06:38 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_bloc	*fill_bloc(t_infos *infos)
 	return (bloc);
 }
 
-size_t	get_size(t_bloc *first)
+size_t	get_bloc_size(t_bloc *first)
 {
 	t_bloc	*tmp;
 	size_t	sum;

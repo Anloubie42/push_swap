@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 08:15:47 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/18 12:14:10 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/27 12:07:10 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,33 +33,6 @@ void	sort_five(t_infos *infos)
 		}
 		sort_three_a(infos);
 		if (infos->b->nb < infos->b->next->nb)
-			print_sb(infos);
-		while (++count < 3)
-			print_pa(infos);
-	}
-}
-
-void	sort_five_reverse(t_infos *infos)
-{
-	unsigned int	count;
-	unsigned int	size;
-	int				median;
-
-	count = 0;
-	size = (infos->size == 5) ? 3 : 2;
-	while (!check_sorted_list_reverse(infos->a))
-	{
-		median = get_median_list(infos->a, infos->size_a);
-		while (infos->size_a > size)
-		{
-			if ((infos->first_a->nb > median) ||
-			(size == 2 && infos->first_a->nb == median))
-				print_pb(infos);
-			else
-				print_ra(infos);
-		}
-		sort_three_a_reverse(infos);
-		if (infos->b->nb > infos->b->next->nb)
 			print_sb(infos);
 		while (++count < 3)
 			print_pa(infos);

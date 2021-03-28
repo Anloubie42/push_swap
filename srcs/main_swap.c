@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:43:12 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/09 13:36:31 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/27 13:03:06 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	main(int ac, char **av)
 		return (0);
 	create_stack(ac, av, infos);
 	if (check_sorted(infos))
-		free_exit(infos);
+		free_exit(infos, 1);
 	begin_sort(infos);
+	free_exit(infos, 0);
 	return (0);
 }

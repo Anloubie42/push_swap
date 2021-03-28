@@ -3,32 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_input.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 08:35:39 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/22 09:18:01 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/27 12:47:29 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	fill_array(t_infos *infos)
-{
-	t_elem	*tmp;
-	int		i;
-
-	i = 0;
-	tmp = infos->first_a;
-	while (tmp)
-	{
-		infos->array[i] = tmp->nb;
-		i++;
-		if (tmp->next)
-			tmp = tmp->next;
-		else
-			break ;
-	}
-}
 
 int		*sort_array(int *array, unsigned int size)
 {

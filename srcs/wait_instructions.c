@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   wait_instructions.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:19:03 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/16 11:11:54 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/28 18:20:49 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-void	print_list(t_elem *elem)
-{
-	t_elem *tmp;
-
-	tmp = elem;
-	while (tmp)
-	{
-		printf("%d ", tmp->nb);
-		tmp = tmp->next;
-	}
-	printf("\n");
-}
 
 int		check_sorted_list_reverse(t_elem *first)
 {
@@ -106,18 +93,11 @@ void	wait_instructions(t_infos *infos)
 			write(2, "Error\n", 6);
 			exit(1);
 		}
-		print_list(infos->a);
-		print_list(infos->b);
 		free(instruction);
 	}
+	free(instruction);
 	if (check_sorted(infos))
-	{
 		write(1, "OK\n", 3);
-		free_exit(infos);
-	}
 	else
-	{
 		write(1, "KO\n", 3);
-		free_exit(infos);
-	}
 }
