@@ -6,7 +6,7 @@
 #    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 13:12:09 by anloubie          #+#    #+#              #
-#    Updated: 2021/03/25 23:16:04 by antoine          ###   ########.fr        #
+#    Updated: 2021/03/29 01:35:38 by antoine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,6 @@ SRCS_NAME	=	create_stack.c			\
 				print_reverse_rotate.c	\
 				sort_five.c				\
 				sort_three.c			\
-				bloc.c					\
 				push_or_rotate.c		\
 				main_swap.c
 

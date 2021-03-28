@@ -25,8 +25,7 @@ void	sort_five(t_infos *infos)
 		median = get_median_list(infos->a, infos->size_a);
 		while (infos->size_a > size)
 		{
-			if ((infos->first_a->nb < median) ||
-			(size == 2 && infos->first_a->nb == median))
+			if (infos->first_a->nb < median)
 				print_pb(infos);
 			else
 				print_ra(infos);
