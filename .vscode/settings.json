@@ -5,6 +5,7 @@
 		"bitset": "c",
 		"chrono": "c",
 		"unordered_map": "c",
-		"checker.h": "c"
+		"checker.h": "c",
+		"push_swap.h": "c"
 	}
 }

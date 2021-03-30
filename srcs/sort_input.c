@@ -6,13 +6,13 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 08:35:39 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/27 12:47:29 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/30 00:12:22 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		*sort_array(int *array, unsigned int size)
+int	*sort_array(int *array, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	j;

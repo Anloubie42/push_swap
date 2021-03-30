@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:02:26 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/27 12:57:04 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/30 12:31:02 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct		s_infos
 	unsigned int	size_b;
 	int				sorted;
 	char			**instructions;
-	void			(*op[NB_INSTRU])(struct s_infos *infos);
+	void			(*op[11])(struct s_infos *infos);
 }					t_infos;
 
 /*

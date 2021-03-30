@@ -6,13 +6,13 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 11:30:56 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/27 12:56:52 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/30 00:12:06 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void		free_list(t_elem *list)
+void	free_list(t_elem *list)
 {
 	t_elem	*tmp;
 
@@ -24,7 +24,7 @@ void		free_list(t_elem *list)
 	}
 }
 
-void		free_exit(t_infos *infos, int ex)
+void	free_exit(t_infos *infos, int ex)
 {
 	int		i;
 

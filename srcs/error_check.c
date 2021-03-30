@@ -6,21 +6,21 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:19:52 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/29 01:50:03 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/30 00:13:53 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int		ft_isspace(char c)
+int	ft_isspace(char c)
 {
 	if (c != '\t' && c != '\n' && c != '\r' && c != '\v' && c != '\f'
-	&& c != ' ')
+		&& c != ' ')
 		return (0);
 	return (1);
 }
 
-int		is_all_digits(char *str)
+int	is_all_digits(char *str)
 {
 	size_t	i;
 
@@ -34,7 +34,7 @@ int		is_all_digits(char *str)
 	return (1);
 }
 
-int		middle_dash(char *str)
+int	middle_dash(char *str)
 {
 	int	i;
 
@@ -48,7 +48,7 @@ int		middle_dash(char *str)
 	return (0);
 }
 
-int		input_error(int ac, char **av)
+int	input_error(int ac, char **av)
 {
 	int	i;
 	int	j;

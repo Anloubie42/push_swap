@@ -6,13 +6,13 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 11:03:23 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/14 11:13:07 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/30 00:14:11 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-t_elem		*reverse_rotate_stack(t_elem **alst)
+t_elem	*reverse_rotate_stack(t_elem **alst)
 {
 	t_elem	*tmp;
 	t_elem	*tmp2;
@@ -28,17 +28,17 @@ t_elem		*reverse_rotate_stack(t_elem **alst)
 	return (*alst);
 }
 
-void		reverse_ra(t_infos *infos)
+void	reverse_ra(t_infos *infos)
 {
 	infos->first_a = reverse_rotate_stack(&infos->a);
 }
 
-void		reverse_rb(t_infos *infos)
+void	reverse_rb(t_infos *infos)
 {
 	infos->first_b = reverse_rotate_stack(&infos->b);
 }
 
-void		reverse_rboth(t_infos *infos)
+void	reverse_rboth(t_infos *infos)
 {
 	reverse_ra(infos);
 	reverse_rb(infos);

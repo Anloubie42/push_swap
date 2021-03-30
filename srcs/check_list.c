@@ -6,13 +6,13 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 15:35:15 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/05 19:35:47 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/30 00:14:44 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		is_last_biggest(t_elem *elem)
+int	is_last_biggest(t_elem *elem)
 {
 	t_elem	*tmp;
 	int		nb;
@@ -32,7 +32,7 @@ int		is_last_biggest(t_elem *elem)
 	return (0);
 }
 
-int		is_last_smallest(t_elem *elem)
+int	is_last_smallest(t_elem *elem)
 {
 	t_elem	*tmp;
 	int		nb;
@@ -52,7 +52,7 @@ int		is_last_smallest(t_elem *elem)
 	return (0);
 }
 
-int		is_first_biggest(t_elem *elem)
+int	is_first_biggest(t_elem *elem)
 {
 	t_elem	*tmp;
 	int		first;
@@ -72,7 +72,7 @@ int		is_first_biggest(t_elem *elem)
 	return (1);
 }
 
-int		is_first_smallest(t_elem *elem)
+int	is_first_smallest(t_elem *elem)
 {
 	t_elem	*tmp;
 	int		first;

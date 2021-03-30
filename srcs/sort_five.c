@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 08:15:47 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/27 12:07:10 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/30 00:00:07 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	sort_five(t_infos *infos)
 	int				median;
 
 	count = 0;
-	size = (infos->size == 5) ? 3 : 2;
+	size = 2;
+	if (infos->size == 5)
+		size = 3;
 	while (!check_sorted(infos))
 	{
 		median = get_median_list(infos->a, infos->size_a);

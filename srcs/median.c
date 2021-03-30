@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   median.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 10:23:32 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/22 10:53:41 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/03/30 00:11:53 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		get_median(int *array, unsigned int size)
+int	get_median(int *array, unsigned int size)
 {
 	return (array[size / 2]);
 }
 
-int		get_median_list(t_elem *first, unsigned int size)
+int	get_median_list(t_elem *first, unsigned int size)
 {
 	int		*array;
 	t_elem	*tmp;

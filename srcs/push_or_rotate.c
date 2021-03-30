@@ -6,11 +6,19 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 08:54:25 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/27 12:30:12 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/30 00:11:09 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	push_or_rotate_a(t_infos *infos, t_bloc **bloc_a, t_bloc **b)
+{
+	print_pb(infos);
+	(*b)->size++;
+	if (*bloc_a)
+		(*bloc_a)->size--;
+}
 
 void	split_stack_a(t_infos *infos, t_bloc **bloc_a, t_bloc **b)
 {
@@ -21,17 +29,15 @@ void	split_stack_a(t_infos *infos, t_bloc **bloc_a, t_bloc **b)
 	while ((*bloc_a && (*bloc_a)->size > 3) || (!*bloc_a && infos->size_a > 3))
 	{
 		count = 0;
-		size = ((*bloc_a)) ? (*bloc_a)->size : infos->size_a;
+		size = infos->size_a;
+		if (*bloc_a)
+			size = (*bloc_a)->size;
 		median = get_median_list(infos->first_a, size);
 		add_bloc_front(b, new_bloc());
 		while (((*b)->size < (size / 2)))
 		{
 			if (infos->first_a->nb < median)
-			{
-				print_pb(infos);
-				(*b)->size++;
-				((*bloc_a)) ? (*bloc_a)->size-- : 0;
-			}
+				push_or_rotate_a(infos, bloc_a, b);
 			else if ((*b)->size < (size / 2))
 				print_ra(infos);
 			count++;
