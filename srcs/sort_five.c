@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 08:15:47 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/30 00:00:07 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/31 09:17:21 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	sort_five(t_infos *infos)
 		size = 3;
 	while (!check_sorted(infos))
 	{
-		median = get_median_list(infos->a, infos->size_a);
+		median = get_median_list(infos, infos->a, infos->size_a);
 		while (infos->size_a > size)
 		{
 			if (infos->first_a->nb < median)

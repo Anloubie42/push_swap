@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:43:33 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/30 12:32:18 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/31 09:16:34 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int					check_sorted_list_reverse(t_elem *first);
 /*
 **	Median
 */
-int					get_median_list(t_elem *first, unsigned int size);
+int					get_median_list(t_infos *infos, t_elem *first,
+					unsigned int size);
 
 /*
 **	Print functions

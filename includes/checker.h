@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:02:26 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/30 12:31:02 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/31 09:09:47 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
 # define NB_INSTRU 11
 
 typedef struct		s_elem
@@ -36,7 +37,6 @@ typedef struct		s_infos
 	unsigned int	size;
 	unsigned int	size_a;
 	unsigned int	size_b;
-	int				sorted;
 	char			**instructions;
 	void			(*op[11])(struct s_infos *infos);
 }					t_infos;
@@ -94,6 +94,7 @@ void				free_exit(t_infos *infos, int ex);
 **	Error check
 */
 int					input_error(int ac, char **av);
+long				ft_atol(const char *str);
 
 /*
 **	Sort check

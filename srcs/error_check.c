@@ -3,14 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   error_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:19:52 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/30 00:13:53 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/31 09:05:26 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
+int	is_off_int(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (ft_strlen(str) > 11)
+		return (1);
+	if (ft_atol(str) > INT_MAX || ft_atol(str) < INT_MIN)
+		return (1);
+	return (0);
+}
 
 int	ft_isspace(char c)
 {
@@ -58,6 +70,8 @@ int	input_error(int ac, char **av)
 		return (1);
 	while (i < ac)
 	{
+		if (is_off_int(av[i]))
+			return (1);
 		if (is_all_digits(av[i]) == 0)
 			return (1);
 		if (middle_dash(av[i]))

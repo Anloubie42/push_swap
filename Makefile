@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: antoine <antoine@student.42.fr>            +#+  +:+       +#+         #
+#    By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 13:12:09 by anloubie          #+#    #+#              #
-#    Updated: 2021/03/29 01:53:25 by antoine          ###   ########.fr        #
+#    Updated: 2021/03/31 09:02:01 by anloubie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS_2_NAME	=	create_stack.c			\
 				reverse_rotate.c		\
 				free_exit.c				\
 				error_check.c			\
+				ft_atol.c				\
 				main_checker.c
 
 SRCS_NAME	=	create_stack.c			\
@@ -47,6 +48,7 @@ SRCS_NAME	=	create_stack.c			\
 				sort_five.c				\
 				sort_three.c			\
 				push_or_rotate.c		\
+				ft_atol.c				\
 				main_swap.c
 
 INCS_NAME	=	checker.h

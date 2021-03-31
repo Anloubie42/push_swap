@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:10:40 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/30 12:11:21 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/31 09:09:44 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	create_stack(int ac, char **av, t_infos *infos)
 	infos->a = new_elem(ft_atoi(av[1]), 0);
 	infos->b = NULL;
 	infos->instructions = (char**)malloc(sizeof(char *) * NB_INSTRU);
-	infos->sorted = 0;
 	if (!(infos->a) || !(infos->instructions))
 		free_exit(infos, 1);
 	i = 2;

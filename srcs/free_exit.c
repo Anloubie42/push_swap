@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 11:30:56 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/30 00:12:06 by antoine          ###   ########.fr       */
+/*   Updated: 2021/03/31 08:59:45 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void	free_exit(t_infos *infos, int ex)
 	if (infos)
 		free(infos);
 	if (ex == 1)
-		exit(0);
+		exit(1);
 }

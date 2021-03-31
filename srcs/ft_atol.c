@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_swap.c                                        :+:      :+:    :+:   */
+/*   atol.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/05 14:43:12 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/31 09:31:50 by anloubie         ###   ########.fr       */
+/*   Created: 2021/03/31 08:57:28 by anloubie          #+#    #+#             */
+/*   Updated: 2021/03/31 09:01:23 by anloubie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-int	main(int ac, char **av)
+long	ft_atol(const char *str)
 {
-	t_infos	*infos;
+	int		i;
+	long	res;
+	long	mult;
 
-	if (input_error(ac, av))
+	i = 0;
+	res = 0;
+	mult = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		write(2, "Error\n", 6);
-		return (1);
+		if (str[i] == '-')
+			mult = -1;
+		i++;
 	}
-	infos = (t_infos*)malloc(sizeof(t_infos));
-	if (!infos)
-		return (0);
-	create_stack(ac, av, infos);
-	if (check_sorted(infos))
-		free_exit(infos, 1);
-	begin_sort(infos);
-	free_exit(infos, 0);
-	return (0);
+	while (str[i] && str[i] <= '9' && str[i] >= '0')
+	{
+		res = (res * 10) + (str[i] - 48);
+		i++;
+	}
+	return (res * mult);
 }
