@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:19:52 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/31 09:05:26 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/04/02 11:54:11 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,6 @@ int	input_error(int ac, char **av)
 	int	j;
 
 	i = 1;
-	if (ac == 2)
-		return (1);
 	while (i < ac)
 	{
 		if (is_off_int(av[i]))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anloubie <anloubie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 14:43:12 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/31 09:31:50 by anloubie         ###   ########.fr       */
+/*   Updated: 2021/04/02 11:54:45 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	main(int ac, char **av)
 {
 	t_infos	*infos;
 
+	if (ac <= 2)
+		return (1);
 	if (input_error(ac, av))
 	{
 		write(2, "Error\n", 6);
