@@ -26,7 +26,10 @@ int	main(int ac, char **av)
 		return (0);
 	create_stack(ac, av, infos);
 	if (check_sorted(infos))
-		free_exit(infos, 1);
+	{
+		free_exit(infos, 0);
+		return (0);
+	}
 	begin_sort(infos);
 	free_exit(infos, 0);
 	return (0);

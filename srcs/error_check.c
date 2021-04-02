@@ -14,9 +14,6 @@
 
 int	is_off_int(char *str)
 {
-	int	i;
-
-	i = 0;
 	if (ft_strlen(str) > 11)
 		return (1);
 	if (ft_atol(str) > INT_MAX || ft_atol(str) < INT_MIN)
