@@ -6,7 +6,7 @@
 /*   By: antoine <antoine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 11:03:23 by anloubie          #+#    #+#             */
-/*   Updated: 2021/03/30 00:14:11 by antoine          ###   ########.fr       */
+/*   Updated: 2021/04/02 12:05:41 by antoine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_elem	*reverse_rotate_stack(t_elem **alst)
 	tmp2 = tmp;
 	while ((*alst)->next)
 		(*alst) = (*alst)->next;
-	while (tmp2->next->next)
+	while (tmp2->next && tmp2->next->next)
 		tmp2 = tmp2->next;
 	tmp2->next = NULL;
 	(*alst)->next = tmp;
@@ -30,12 +30,14 @@ t_elem	*reverse_rotate_stack(t_elem **alst)
 
 void	reverse_ra(t_infos *infos)
 {
-	infos->first_a = reverse_rotate_stack(&infos->a);
+	if (infos->size_a > 1)
+		infos->first_a = reverse_rotate_stack(&infos->a);
 }
 
 void	reverse_rb(t_infos *infos)
 {
-	infos->first_b = reverse_rotate_stack(&infos->b);
+	if (infos->size_b > 1)
+		infos->first_b = reverse_rotate_stack(&infos->b);
 }
 
 void	reverse_rboth(t_infos *infos)
